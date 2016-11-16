@@ -16,12 +16,35 @@
 <script type="text/babel">
     var Employee = React.createClass({
         render: function() {
-            return (<div>employee</div>);
+            return (
+                    <tr>
+                        <td>{this.props.employee.name}</td>
+                        <td>{this.props.employee.age}</td>
+                        <td>{this.props.employee.years}</td>
+                    </tr>
+            );
+//            return (<div>employee</div>);
         }
     });
     var EmployeeTable = React.createClass({
         render: function () {
-            return (<div>employee table</div>);
+            var rows = [];
+            this.props.employees.forEach(function (employee) {
+               rows.push(<Employee employee = {employee} />)
+            });
+            return (
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Name</th><th>Age</th><th>Years</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {rows}
+                        </tbody>
+                    </table>
+            );
+//            return (<div>employee table</div>);
         }
     });
 
