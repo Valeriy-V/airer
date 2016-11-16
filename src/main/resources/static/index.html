@@ -8,6 +8,9 @@
 <body>
 <div id="root"></div>
 
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 <script src="https://unpkg.com/react@15/dist/react.js"></script>
 <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
 
@@ -23,7 +26,6 @@
                         <td>{this.props.employee.years}</td>
                     </tr>
             );
-//            return (<div>employee</div>);
         }
     });
     var EmployeeTable = React.createClass({
@@ -33,7 +35,8 @@
                rows.push(<Employee employee = {employee} />)
             });
             return (
-                    <table>
+                    <div class="container">
+                    <table className="table table-striped">
                         <thead>
                         <tr>
                             <th>Name</th><th>Age</th><th>Years</th>
@@ -43,8 +46,8 @@
                         {rows}
                         </tbody>
                     </table>
+                    </div>
             );
-//            return (<div>employee table</div>);
         }
     });
 
