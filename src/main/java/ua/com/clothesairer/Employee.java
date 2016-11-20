@@ -15,13 +15,13 @@ public class Employee {
     private @Id @GeneratedValue Long id;
     private String name;
     private int age;
-    private int year;
+    private int years;
 
     private Employee() {}
 
-    public Employee(String name, int age, int year) {
+    public Employee(String name, int age, int years) {
         this.name = name;
         this.age = age;
-        this.year = year;
+        this.years = years;
     }
 }
