@@ -55,7 +55,6 @@ var EmployeeTable = React.createClass({
                 </table>
             </div>
         );
-        console.log("render Employee Table after return");
     }
 });
 
@@ -84,8 +83,6 @@ var App = React.createClass({
         console.log("render App");
         return ( <EmployeeTable employees={this.state.employees}/> );
     },
-
-
 
 });
 
