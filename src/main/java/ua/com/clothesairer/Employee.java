@@ -6,9 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-/**
- * Created by val on 16.11.16.
- */
 @Data
 @Entity
 public class Employee {

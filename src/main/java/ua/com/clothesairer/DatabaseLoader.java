@@ -4,9 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-/**
- * Created by venzyk on 17.11.16.
- */
 @Component
 public class DatabaseLoader implements CommandLineRunner {
 

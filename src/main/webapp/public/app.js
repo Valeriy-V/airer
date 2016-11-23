@@ -18,9 +18,10 @@ var Employee = React.createClass({
         });
     },
     render: function() {
+        console.log("render Employee " + this.props.employee.name);
         if (this.state.display==false) return null;
         return (
-            <tr>
+            <tr key={this.props.employee.years.toString()}>
                 <td>{this.props.employee.name}</td>
                 <td>{this.props.employee.age}</td>
                 <td>{this.props.employee.years}</td>
@@ -34,12 +35,14 @@ var Employee = React.createClass({
 
 var EmployeeTable = React.createClass({
     render: function () {
+        console.log("render Employee Table");
         var rows = [];
         this.props.employees.forEach(function (employee) {
-            rows.push(<Employee employee = {employee} />)
+            rows.push(<Employee employee = {employee} key={employee.name}/>)
         });
+        console.log("render Employee Table before return");
         return (
-            <div class="container">
+            <div className="container">
                 <table className="table table-striped">
                     <thead>
                     <tr>
@@ -52,11 +55,11 @@ var EmployeeTable = React.createClass({
                 </table>
             </div>
         );
+        console.log("render Employee Table after return");
     }
 });
 
 var App = React.createClass({
-
 
     loadEmployeesFromServer: function () {
         var self = this;
@@ -78,7 +81,7 @@ var App = React.createClass({
     },
 
     render() {
-        console.log("dfjkdfjd");
+        console.log("render App");
         return ( <EmployeeTable employees={this.state.employees}/> );
     },
 
